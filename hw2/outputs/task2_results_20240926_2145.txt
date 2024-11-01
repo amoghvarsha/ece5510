@@ -1,0 +1,58 @@
+pawpaw.rlogin
+[2024-09-26 21:45] Testing TreePeterson lock
+[2024-09-26 21:45] Running with 2 threads...
+Threads: 2, Total: 128000, Result: 
+Average time per thread is 37ms
+Average time per thread is 25ms
+Average time per thread is 26ms
+Average time per thread is 25ms
+Average time per thread is 25ms
+---------------------------------
+[2024-09-26 21:45] Running with 4 threads...
+Threads: 4, Total: 128000, Result: 
+Average time per thread is 104ms
+Average time per thread is 102ms
+Average time per thread is 95ms
+Average time per thread is 98ms
+Average time per thread is 114ms
+---------------------------------
+[2024-09-26 21:45] Running with 8 threads...
+Threads: 8, Total: 128000, Result: 
+Average time per thread is 108ms
+Average time per thread is 100ms
+Average time per thread is 100ms
+Average time per thread is 92ms
+Average time per thread is 101ms
+---------------------------------
+[2024-09-26 21:45] Running with 16 threads...
+Threads: 16, Total: 128000, Result: 
+Average time per thread is 111ms
+Average time per thread is 107ms
+Average time per thread is 108ms
+Average time per thread is 115ms
+Average time per thread is 93ms
+---------------------------------
+[2024-09-26 21:45] Running with 20 threads...
+Threads: 20, Total: 128000, Result: 
+Average time per thread is 116ms
+Average time per thread is 117ms
+Average time per thread is 99ms
+Average time per thread is 100ms
+Average time per thread is 108ms
+---------------------------------
+[2024-09-26 21:45] Running with 32 threads...
+Threads: 32, Total: 128000, Result: 
+Average time per thread is 119ms
+Average time per thread is 111ms
+Average time per thread is 108ms
+Average time per thread is 113ms
+Average time per thread is 101ms
+---------------------------------
+[2024-09-26 21:45] Running with 64 threads...
+Threads: 64, Total: 128000, Result: 
+Average time per thread is 111ms
+Average time per thread is 87ms
+Average time per thread is 69ms
+Average time per thread is 80ms
+Average time per thread is 80ms
+---------------------------------
