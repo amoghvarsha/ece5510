@@ -1,0 +1,77 @@
+Compilation successful. Running the program with input file: ./inputs/in.txt and stats file: ./stats/benchmark_results.csv
+Running benchmarks...
+Using buffer size of 1024...
+
+Running SequentialPrefix...
+Average time: 4.675 ms
+Speedup: 1.00
+----------------------------------------------------------
+
+Running ParallelPrefix...
+Average time: 4070.071 ms
+Speedup: 0.00
+----------------------------------------------------------
+
+Running ParallelPrefixInternal...
+Average time: 6.452 ms
+Speedup: 0.72
+----------------------------------------------------------
+
+Running BetterParallelPrefix...
+Average time: 14.196 ms
+Speedup: 0.33
+----------------------------------------------------------
+
+Using buffer size of 16384...
+
+Running SequentialPrefix...
+Average time: 3.903 ms
+Speedup: 1.00
+----------------------------------------------------------
+
+Running ParallelPrefix...
+Average time: 4887.289 ms
+Speedup: 0.00
+----------------------------------------------------------
+
+Running ParallelPrefixInternal...
+Average time: 4.342 ms
+Speedup: 0.90
+----------------------------------------------------------
+
+Running BetterParallelPrefix...
+Average time: 11.009 ms
+Speedup: 0.35
+----------------------------------------------------------
+
+Using buffer size of 131072...
+
+Running SequentialPrefix...
+Average time: 3.961 ms
+Speedup: 1.00
+----------------------------------------------------------
+
+Running ParallelPrefix...
+Average time: 9528.217 ms
+Speedup: 0.00
+----------------------------------------------------------
+
+Running ParallelPrefixInternal...
+Average time: 3.912 ms
+Speedup: 1.01
+----------------------------------------------------------
+
+Running BetterParallelPrefix...
+Average time: 17.443 ms
+Speedup: 0.23
+----------------------------------------------------------
+
+OK - ./outputs/SequentialPrefix.txt matches expected output.
+OK - ./outputs/ParallelPrefix.txt matches expected output.
+OK - ./outputs/BetterParallelPrefix.txt matches expected output.
+OK - ./outputs/ParallelPrefixInternal.txt matches expected output.
+
+Deleted previous plot PNG files in perf_plots directory.
+Plots saved to directory: './perf_plots/'
+
+Program Ended
