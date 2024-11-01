@@ -1,5 +1,0 @@
-Average time per thread is 30ms
-Average time per thread is 18ms
-Average time per thread is 21ms
-Average time per thread is 24ms
-Average time per thread is 21ms
