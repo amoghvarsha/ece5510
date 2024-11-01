@@ -1,0 +1,100 @@
+[2024-09-29 20:44] Testing Bakery lock
+[2024-09-29 20:44] Running with 2 threads...
+Threads: 2, Total: 32000, Result: 
+Average time per thread is 9ms
+Average time per thread is 4ms
+Average time per thread is 5ms
+Average time per thread is 4ms
+Average time per thread is 2ms
+---------------------------------
+[2024-09-29 20:44] Running with 4 threads...
+Threads: 4, Total: 32000, Result: 
+Average time per thread is 8ms
+Average time per thread is 5ms
+Average time per thread is 1ms
+Average time per thread is 5ms
+Average time per thread is 4ms
+---------------------------------
+[2024-09-29 20:44] Running with 8 threads...
+Threads: 8, Total: 32000, Result: 
+Average time per thread is 14ms
+Average time per thread is 6ms
+Average time per thread is 6ms
+Average time per thread is 7ms
+Average time per thread is 6ms
+---------------------------------
+[2024-09-29 20:44] Running with 16 threads...
+Threads: 16, Total: 32000, Result: 
+Average time per thread is 16ms
+Average time per thread is 8ms
+Average time per thread is 9ms
+Average time per thread is 8ms
+Average time per thread is 9ms
+---------------------------------
+[2024-09-29 20:44] Running with 20 threads...
+Threads: 20, Total: 32000, Result: 
+Average time per thread is 41ms
+Average time per thread is 12ms
+Average time per thread is 23ms
+Average time per thread is 23ms
+Average time per thread is 18ms
+---------------------------------
+[2024-09-29 20:44] Running with 32 threads...
+Threads: 32, Total: 32000, Result: 
+Average time per thread is 64ms
+Average time per thread is 51ms
+Average time per thread is 100ms
+Average time per thread is 71ms
+Average time per thread is 38ms
+---------------------------------
+
+[2024-09-29 20:44] Testing Filter lock
+[2024-09-29 20:44] Running with 2 threads...
+Threads: 2, Total: 32000, Result: 
+Average time per thread is 6ms
+Average time per thread is 5ms
+Average time per thread is 2ms
+Average time per thread is 3ms
+Average time per thread is 4ms
+---------------------------------
+[2024-09-29 20:44] Running with 4 threads...
+Threads: 4, Total: 32000, Result: 
+Average time per thread is 15ms
+Average time per thread is 9ms
+Average time per thread is 9ms
+Average time per thread is 10ms
+Average time per thread is 8ms
+---------------------------------
+[2024-09-29 20:44] Running with 8 threads...
+Threads: 8, Total: 32000, Result: 
+Average time per thread is 34ms
+Average time per thread is 19ms
+Average time per thread is 18ms
+Average time per thread is 17ms
+Average time per thread is 19ms
+---------------------------------
+[2024-09-29 20:44] Running with 16 threads...
+Threads: 16, Total: 32000, Result: 
+Average time per thread is 84ms
+Average time per thread is 37ms
+Average time per thread is 36ms
+Average time per thread is 37ms
+Average time per thread is 37ms
+---------------------------------
+[2024-09-29 20:44] Running with 20 threads...
+Threads: 20, Total: 32000, Result: 
+Average time per thread is 103ms
+Average time per thread is 47ms
+Average time per thread is 43ms
+Average time per thread is 45ms
+Average time per thread is 44ms
+---------------------------------
+[2024-09-29 20:44] Running with 32 threads...
+Threads: 32, Total: 32000, Result: 
+Average time per thread is 351ms
+Average time per thread is 120ms
+Average time per thread is 95ms
+Average time per thread is 139ms
+Average time per thread is 65ms
+---------------------------------
+
