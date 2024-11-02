@@ -1,0 +1,283 @@
+Mode: normal
+Lock: BackoffLock
+
+---------------------------------
+Lock Type: Exponential
+Threads: 8
+Result: 
+Average time per thread is 5ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Exponential
+Threads: 12
+Result: 
+Average time per thread is 6ms
+Average time per thread is 2ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Exponential
+Threads: 16
+Result: 
+Average time per thread is 6ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Exponential
+Threads: 24
+Result: 
+Average time per thread is 4ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Exponential
+Threads: 32
+Result: 
+Average time per thread is 4ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Exponential
+Threads: 48
+Result: 
+Average time per thread is 115ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Exponential
+Threads: 64
+Result: 
+Average time per thread is 59ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fibonacci
+Threads: 8
+Result: 
+Average time per thread is 3ms
+Average time per thread is 2ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fibonacci
+Threads: 12
+Result: 
+Average time per thread is 4ms
+Average time per thread is 2ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fibonacci
+Threads: 16
+Result: 
+Average time per thread is 5ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fibonacci
+Threads: 24
+Result: 
+Average time per thread is 5ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fibonacci
+Threads: 32
+Result: 
+Average time per thread is 12ms
+Average time per thread is 2ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fibonacci
+Threads: 48
+Result: 
+Average time per thread is 8ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fibonacci
+Threads: 64
+Result: 
+Average time per thread is 37ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Linear
+Threads: 8
+Result: 
+Average time per thread is 3ms
+Average time per thread is 2ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Linear
+Threads: 12
+Result: 
+Average time per thread is 3ms
+Average time per thread is 2ms
+Average time per thread is 0ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Linear
+Threads: 16
+Result: 
+Average time per thread is 6ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Linear
+Threads: 24
+Result: 
+Average time per thread is 7ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Linear
+Threads: 32
+Result: 
+Average time per thread is 5ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Linear
+Threads: 48
+Result: 
+Average time per thread is 26ms
+Average time per thread is 1ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Linear
+Threads: 64
+Result: 
+Average time per thread is 158ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fixed 50
+Threads: 8
+Result: 
+Average time per thread is 176ms
+Average time per thread is 44ms
+Average time per thread is 25ms
+Average time per thread is 57ms
+Average time per thread is 25ms
+---------------------------------
+---------------------------------
+Lock Type: Fixed 50
+Threads: 12
+Result: 
+Average time per thread is 146ms
+Average time per thread is 29ms
+Average time per thread is 17ms
+Average time per thread is 9ms
+Average time per thread is 16ms
+---------------------------------
+---------------------------------
+Lock Type: Fixed 50
+Threads: 16
+Result: 
+Average time per thread is 122ms
+Average time per thread is 38ms
+Average time per thread is 16ms
+Average time per thread is 3ms
+Average time per thread is 19ms
+---------------------------------
+---------------------------------
+Lock Type: Fixed 50
+Threads: 24
+Result: 
+Average time per thread is 85ms
+Average time per thread is 33ms
+Average time per thread is 2ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fixed 50
+Threads: 32
+Result: 
+Average time per thread is 25ms
+Average time per thread is 37ms
+Average time per thread is 1ms
+Average time per thread is 1ms
+Average time per thread is 1ms
+---------------------------------
+---------------------------------
+Lock Type: Fixed 50
+Threads: 48
+Result: 
+Average time per thread is 41ms
+Average time per thread is 18ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+---------------------------------
+---------------------------------
+Lock Type: Fixed 50
+Threads: 64
+Result: 
+Average time per thread is 44ms
+Average time per thread is 4ms
+Average time per thread is 0ms
+Average time per thread is 0ms
+Average time per thread is 1ms
+---------------------------------

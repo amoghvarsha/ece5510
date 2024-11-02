@@ -1,33 +1,32 @@
 package edu.vt.ece.hw4.locks;
 
 import edu.vt.ece.hw4.backoff.Backoff;
-import edu.vt.ece.hw4.backoff.BackoffFactory;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class BackoffLock implements Lock {
 
-    private AtomicBoolean state;
-    private final String backoffStrategy;
+    private final AtomicBoolean state;
     private final Backoff backoff;
 
-    public BackoffLock(String backoffStrategy) {
+    // Constructor accepts a Backoff instance directly
+    public BackoffLock(Backoff backoff) {
         this.state = new AtomicBoolean(false);
-        this.backoffStrategy = backoffStrategy;
-        this.backoff = BackoffFactory.getBackoff(this.backoffStrategy);
+        this.backoff = backoff;
     }
 
     @Override
     public void lock() {
         while (true) {
-            while (state.get()) {
+            while (state.get()) {           // Spin until the lock becomes available
             }
-            if (!state.getAndSet(true)) { // try to acquire lock
+            if (!state.getAndSet(true)) {   // Try to acquire the lock
                 return;
-            } else {            // backoff on failure
+            } else {                        // Backoff on failure
                 try {
                     backoff.backoff();
                 } catch (InterruptedException ignored) {
+                    Thread.currentThread().interrupt();
                 }
             }
         }
@@ -35,7 +34,7 @@ public class BackoffLock implements Lock {
 
     @Override
     public void unlock() {
-        backoff.reset();
-        state.set(false);
+        backoff.reset();    // Reset the backoff state when unlocking
+        state.set(false);   // Release the lock
     }
 }

@@ -8,55 +8,110 @@ import edu.vt.ece.hw4.locks.BackoffLock;
 import edu.vt.ece.hw4.locks.Lock;
 import edu.vt.ece.hw4.locks.MCSLock;
 
+import static edu.vt.ece.hw4.utils.DebugConfig.DEBUG;
+
+import edu.vt.ece.hw4.backoff.BackoffFactory;
+
 public class Benchmark {
 
-    private static final String ALOCK = "ALock";
+    private static final String MODE      = "normal";
+    private static final int THREAD_COUNT = 2;
+    private static final int TOTAL_ITERS  = 64;
+
+    private static final String ALOCK       = "ALock";
     private static final String BACKOFFLOCK = "BackoffLock";
-    private static final String MCSLOCK = "MCSLock";
+    private static final String MCSLOCK     = "MCSLock";
 
-    public static void main(String[] args) throws Exception {
-        String mode = args.length <= 0 ? "normal"    : args[0];
-        String lockClass = (args.length <= 1 ? ALOCK : args[1]);
-        int threadCount  = (args.length <= 2 ? 16    : Integer.parseInt(args[2]));
-        int totalIters   = (args.length <= 3 ? 64000 : Integer.parseInt(args[3]));
-        int iters = totalIters / threadCount;
+    public static void main(String[] args) {
 
-        run(args, mode, lockClass, threadCount, iters);
+        try {
+            if (DEBUG)
+                printArgs(args);
 
+            String mode      = (args.length <= 0 ? MODE         : args[0]);
+            String lockClass = (args.length <= 1 ? ALOCK        : args[1]);
+            int threadCount  = (args.length <= 2 ? THREAD_COUNT : Integer.parseInt(args[2]));
+            int totalIters   = (args.length <= 3 ? TOTAL_ITERS  : Integer.parseInt(args[3]));
+                    
+            if (threadCount <= 0 || totalIters <= 0) {
+                throw new IllegalArgumentException("Thread count and Total Iterations must be greater than zero.");
+            }
+
+            int iters = totalIters / threadCount;
+
+            for (int i = 0; i < 5; i++) {
+                run(args, mode, lockClass, threadCount, iters);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void printArgs(String[] args) {
+        System.out.println("\n************ Command-Line Arguments ************");
+        if (args.length == 0) {
+            System.out.println("No arguments provided.");
+        } else {
+            for (int i = 0; i < args.length; i++) {
+                System.out.println((i + 1) + ". " + args[i]);
+            }
+        }
+        System.out.println("************************************************\n");
+    }
+
+    private static Lock createBackoffLock(String[] args) throws IllegalArgumentException {
+        if (args.length <= 4) {
+            throw new IllegalArgumentException("Please specify the backoff strategy for BackoffLock.");
+        }
+
+        String backoffStrategy = args[4].trim();
+        if (backoffStrategy.equals("Fixed") || backoffStrategy.equals("Polynomial")) {
+            if (args.length <= 5) {
+                throw new IllegalArgumentException("Please specify the parameter for " + backoffStrategy + " backoff strategy.");
+            }
+            int parameter = Integer.parseInt(args[5]);
+            return new BackoffLock(BackoffFactory.getBackoff(backoffStrategy, parameter));
+        } else {
+            return new BackoffLock(BackoffFactory.getBackoff(backoffStrategy));
+        }
+    }
+
+    private static Lock createLock(String[] args, int threadCount) throws IllegalArgumentException {
+        String lockClass = args[1].trim();
+        
+        switch (lockClass) {
+            case ALOCK:
+                return new ALock(threadCount);
+            case BACKOFFLOCK:
+                return createBackoffLock(args);
+            case MCSLOCK:
+                return new MCSLock();
+            default:
+                throw new IllegalArgumentException("Unknown Lock: " + lockClass);
+        }
     }
 
     private static void run(String[] args, String mode, String lockClass, int threadCount, int iters) throws Exception {
-        for (int i = 0; i < 5; i++) {
-            Lock lock = null;
-            switch (lockClass.trim()) {
-                case ALOCK:
-                    lock = new ALock(threadCount);
-                    break;
-                case BACKOFFLOCK:
-                    lock = new BackoffLock(args[4]);
-                    break;
-                case MCSLOCK:
-                    lock = new MCSLock();
-                    break;
-            }
+        Lock lock = createLock(args, threadCount);
+        mode = mode.trim().toLowerCase();
 
-            switch (mode.trim().toLowerCase()) {
-                case "normal":
-                    final Counter counter = new SharedCounter(0, lock);
-                    runNormal(counter, threadCount, iters);
-                    break;
-                case "empty":
-                    runEmptyCS(lock, threadCount, iters);
-                    break;
-                case "long":
-                    runLongCS(lock, threadCount, iters);
-                    break;
-                case "barrier":
-                    Barrier b = new TTASBarrier();
-                    throw new UnsupportedOperationException("Complete this.");
-                default:
-                    throw new UnsupportedOperationException("Implement this");
-            }
+        switch (mode) {
+            case "normal":
+                final Counter counter = new SharedCounter(0, lock);
+                runNormal(counter, threadCount, iters);
+                break;
+            case "empty":
+                runEmptyCS(lock, threadCount, iters);
+                break;
+            case "long":
+                runLongCS(lock, threadCount, iters);
+                break;
+            case "barrier":
+                //Barrier b = new TTASBarrier();
+                throw new UnsupportedOperationException("Complete barrier mode");
+            default:
+                throw new IllegalArgumentException("Unknown Mode: " + mode);
         }
     }
 
